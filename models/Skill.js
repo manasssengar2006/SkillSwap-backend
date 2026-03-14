@@ -1,20 +1,16 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 const skillSchema = new mongoose.Schema({
+  title: String,
+  category: String,
+  price: Number,
+  delivery: String,
+  description: String,
+  tags: [String],
+  name: String,
+  avatar: String,
+  college: String,
+  rating: Number
+}, { timestamps: true });
 
-title:String,
-
-description:String,
-
-price:Number,
-
-category:String,
-
-seller:{
-type:mongoose.Schema.Types.ObjectId,
-ref:"User"
-}
-
-},{timestamps:true})
-
-export default mongoose.model("Skill",skillSchema)
+export default mongoose.model("Skill", skillSchema);

@@ -4,8 +4,9 @@ import dotenv from "dotenv"
 import cors from "cors"
 
 import authRoutes from "./routes/authRoutes.js"
-import skillRoutes from "./routes/skillRoutes.js"
+
 import orderRoutes from "./routes/orderRoutes.js"
+import skills from "./routes/skills.js";
 
 dotenv.config()
 
@@ -15,8 +16,8 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/api/auth", authRoutes)
-app.use("/api/skills", skillRoutes)
 app.use("/api/orders", orderRoutes)
+app.use("/api/skills", skills);
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
